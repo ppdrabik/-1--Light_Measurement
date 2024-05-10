@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 35% 5% 60%;
+    grid-template-areas:
+        "progres"
+        "button"
+        "table";
+    background: #ECEBE4;
+    overflow: hidden;
+    row-gap: 30px;
+}
+
+.grid-1-progressbar {
+    display: grid;
+    grid-area: progres;
+}
+
+.frame {
+    display: grid;
+    place-self: center;
+    height: 200px;
+    width: 200px;
+}
+
+.progressbar {
+    display: grid;
+    background: conic-gradient(white, orange 160deg, white 0deg);
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 2px solid #dcdcdc;
+    place-self: center;
+}
+
+.progressbar::before {
+    display: grid;
+    place-self: center;
+    content: "";
+    height: 170px;
+    width: 170px;
+    border-radius: 50%;
+    background-color: #ECEBE4;
+    border: 2px solid #dcdcdc;
+}
+
+#value {
+    position: fixed;
+    place-self: center;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 25px;
+}
+#lux {
+    position: fixed;
+    place-self: center;
+    font-family: 'Inter';;
+    font-weight: 100;
+    font-size: 20px;
+    top:20%;
+}
+
+.grid-2-savebutton {
+    grid-area: button;
+    background: none;
+    text-align: center;
+}
+
+#submit,#close{
+    background: white;
+    background-color: #ffffff;
+    border-radius: 30px;
+    border: 2px solid #dcdcdc;
+    cursor: pointer;
+    color: #000000;
+    font-family: 'Inter';
+    font-size: 14px;
+    font-weight: 600;
+    padding: 1px 24px;
+}
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+    padding: 10px;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#modal-opacity {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+}
+
+#modal-opacity.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+#save,#clear{
+    background: white;
+    background-color: #ffffff;
+    border-radius: 30px;
+    border: 2px solid #dcdcdc;
+    cursor: pointer;
+    color: #000000;
+    font-family: 'Inter';
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px 24px;
+}
+
+#start{
+    background: white;
+    background-color: #ff7b00;
+    border-radius: 30px;
+    border: 2px solid #dcdcdc;
+    cursor: pointer;
+    color: #000000;
+    font-family: 'Inter';
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px 24px;
+}
+#input {
+    padding: 3px;
+    font-size: 16px;
+    border-width: 2px;
+    border-color: #cccccc;
+    border-style: solid;
+    border-radius: 50px;
+}
+
+#input:focus {
+    outline: none;
+}
+
+
+.grid-3-table {
+    grid-area: table;
+    background: none;
+    display: grid;
+}
+
+#zapis
+{
+    font-family: 'Inter';
+    font-weight: 100;
+    font-size: 15px;
+    place-self: center;
+}
+
+th{
+    background: #ffffff;
+    font-family: 'Inter';
+    padding: 7px;
+    text-align: left;
+    border-bottom: 1px solid #cccccc;
+}
+
+td {
+    font-family: 'Inter';
+    padding: 5px;
+    border-bottom: 1px solid #cccccc;
+}
+
+tbody {
+    max-height: 150px;
+    overflow: auto;
+  }

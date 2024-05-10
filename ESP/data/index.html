@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <title>Light Measurment</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="grid-1-progressbar">
+            <div class="frame">
+                <span id="lux">Lx</span>
+                <div class="progressbar">
+                    <span id="value">12345</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-2-savebutton">
+            <button id="save">SAVE</button>
+            <button id="start">START</button>
+            <button id="clear">CLEAR</button>
+        </div>
+        <form>
+            <div class="modal" id="modal">
+                Enter name:
+                <input type="text" id="input" maxlength="10" placeholder="Name..">
+                <button id="submit">SUBMIT</button>
+                <button type="button" id="close">CLOSE</button>
+            </div>
+            <div id="msg">
+        </form>
+
+        <div class="grid-3-table">
+            <span id="zapis">Maksymalna liczba zapisów: 7</span>
+            <table id="tablica">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Value [Lx]</th>
+                    </tr>
+                </thead>
+                <tbody id="myTable">
+                </tbody>
+            </table>
+        </div>
+        <div id="modal-opacity"></div>
+
+    </div>
+</body>
+
+</html>
